@@ -1,0 +1,19 @@
+libs = 
+import libs += libxsimd%lib{xsimd}
+import libs += gtest%lib{gtest}
+
+exe{test_xsimd}: {hxx cxx}{**} $libs
+
+cxx.poptions =+ "-I$out_root" "-I$src_root"
+
+
+if ($cxx.target.system == 'win32-msvc')
+{
+  cxx.coptions += '/EHsc' '/MP' '/bigobj'
+  cxx.loptions += '/MANIFEST:NO'
+}
+elif ($cxx.id == 'clang-msvc')
+{
+  cxx.coptions += '/EHsc' '/bigobj'
+  cxx.loptions += '/MANIFEST:NO'
+}

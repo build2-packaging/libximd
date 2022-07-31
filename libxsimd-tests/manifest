@@ -1,0 +1,16 @@
+: 1
+name: libxsimd-tests
+version: 8.0.3-a.0.z
+project: libxsimd
+summary: Build2 package to test libxsimd
+license: BSD-3-Clause ; BSD 3-Clause "New" or "Revised" License.
+url: https://example.org/libxsimd
+email: swat.somebug@gmail.com
+#build-error-email: swat.somebug@gmail.com
+depends: * build2 >= 0.15.0
+depends: * bpkg >= 0.15.0
+#depends: libhello ^1.0.0
+
+requires: c++14
+
+depends: gtest

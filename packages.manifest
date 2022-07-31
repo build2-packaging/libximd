@@ -1,0 +1,4 @@
+: 1
+location: libxsimd/
+:
+location: libxsimd-tests/

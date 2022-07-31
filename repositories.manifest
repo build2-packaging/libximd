@@ -1,0 +1,16 @@
+: 1
+summary: libxsimd project repository
+
+:
+role: prerequisite
+location: https://pkg.cppget.org/1/stable
+#trust: ...
+
+# build2-packaging/libxtl -> Hopefully move cppget.org in the future
+:
+role: prerequisite
+location: https://github.com/build2-packaging/libxtl.git#main
+
+#:
+#role: prerequisite
+#location: https://git.build2.org/hello/libhello.git
