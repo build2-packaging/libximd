@@ -16,4 +16,4 @@ requires: c++14
 
 tests: libxsimd-tests == $
 
-depends: libxtl ^0.7.0 ? ($config.xsimd.use_xtlcomplex == true)
+depends: libxtl ^0.7.0 ? ($config.libxsimd.use_xtlcomplex == true)

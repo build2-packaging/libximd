@@ -1,17 +1,29 @@
 intf_libs = # Interface dependencies.
 #import xxxx_libs += libhello%lib{hello}
 
+libxsimd_additional_options = 
+
+if ($config.libxsimd.use_xtlcomplex)
+{
+  import intf_libs += libxtl%lib{xtl}
+  libxsimd_additional_options += '-DXSIMD_ENABLE_XTL_COMPLEX=1'
+}
+
+if ($config.libxsimd.enable_fallback)
+  libxsimd_additional_options += '-DXSIMD_ENABLE_FALLBACK=1'
+
 lib{xsimd}: hxx{**} $intf_libs
 
 # Build options.
 #
-cxx.poptions =+ "-I$out_base" "-I$src_base"
+cxx.poptions =+ "-I$out_base" "-I$src_base" $libxsimd_additional_options
+
 
 # Export options.
 #
 lib{xsimd}:
 {
-  cxx.export.poptions = "-I$out_base" "-I$src_base"
+  cxx.export.poptions = "-I$out_base" "-I$src_base" $libxsimd_additional_options
   cxx.export.libs = $intf_libs
 }
 
