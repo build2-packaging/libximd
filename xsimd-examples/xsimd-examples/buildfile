@@ -1,0 +1,6 @@
+libs =
+import libs += libxsimd%lib{xsimd}
+
+exe{mandelbrot}: {hxx cxx}{**} $libs
+
+cxx.poptions =+ "-I$out_base" "-I$src_base"

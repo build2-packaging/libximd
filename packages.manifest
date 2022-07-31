@@ -2,3 +2,5 @@
 location: libxsimd/
 :
 location: libxsimd-tests/
+:
+location: xsimd-examples/

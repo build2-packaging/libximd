@@ -1,8 +1,8 @@
 : 1
-name: libxsimd
+name: xsimd-examples
 version: 8.0.3-a.0.z
 project: libxsimd
-summary: Build2 package for xsimd - provides a unified means for using SIMD features for library authors.
+summary: Examples package for xsimd
 license: BSD-3-Clause ; BSD 3-Clause "New" or "Revised" License.
 description-file: README.md
 url: https://github.com/xtensor-stack/xsimd.git
@@ -11,10 +11,3 @@ email: swat.somebug@gmail.com
 depends: * build2 >= 0.15.0
 depends: * bpkg >= 0.15.0
 #depends: libhello ^1.0.0
-
-requires: c++14
-
-tests: libxsimd-tests == $
-examples: xsimd-examples == $
-
-depends: libxtl ^0.7.0 ? ($config.libxsimd.use_xtlcomplex == true)
