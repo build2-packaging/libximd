@@ -9,11 +9,9 @@ cxx.poptions =+ "-I$out_root" "-I$src_root"
 
 if ($cxx.target.system == 'win32-msvc')
 {
-  cxx.coptions += '/EHsc' '/MP' '/bigobj'
-  cxx.loptions += '/MANIFEST:NO'
-}
-elif ($cxx.id == 'clang-msvc')
-{
-  cxx.coptions += '/EHsc' '/bigobj'
-  cxx.loptions += '/MANIFEST:NO'
+  if($cxx.id == 'msvc' || $cxx.id == 'clang-msvc')
+  { 
+    cxx.coptions += '/EHsc' '/MP' '/bigobj'
+    cxx.loptions += '/MANIFEST:NO'
+  }
 }
